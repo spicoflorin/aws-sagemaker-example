@@ -13,13 +13,13 @@ git clone https://github.com/spicoflorin/aws-sagemaker-example.git
 
 2. In the directory aws-sagemaker-example, build the docker image in the format of ECR Sagemaker  
 
-docker build . --tag <your-accountid>.dkr.ecr.<your-region>.amazonaws.com/<your-ecr-repository-name>
+docker build . --tag your-accountid.dkr.ecr.your-region.amazonaws.com/your-ecr-repository-name
 
 3. Test the image
 
 3.1. Start the container 
 
-docker  run -p 8080:8080 <your-accountid>.dkr.ecr.<your-region>.amazonaws.com/<your-ecr-repository-name>
+docker  run -p 8080:8080 your-accountid.dkr.ecr.your-region.amazonaws.com/your-ecr-repository-name
 
 3.2 Test with a value
 
