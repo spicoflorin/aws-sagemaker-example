@@ -50,8 +50,8 @@ public class SGMController {
   }
 
   @RequestMapping(value = "/ping", method = RequestMethod.GET)
-  public String flinkErrorRateHandler() {
-    return "OK@" + System.currentTimeMillis();
+  public String ping() {
+    return "";
   }
 
 
