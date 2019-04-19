@@ -73,7 +73,7 @@ public class SGMController {
       Object targetValue = results.get(targetName);
       ProbabilityClassificationMap nodeMap = (ProbabilityClassificationMap) targetValue;
 
-      return nodeMap.getResult().toString();
+      return  ( nodeMap != null && nodeMap.getResult() !=  null) ? nodeMap.getResult().toString() : "NA for input->"+dataLine;
     }).collect(Collectors.joining(System.lineSeparator()));
 
     return returns;
