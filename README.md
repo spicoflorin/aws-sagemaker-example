@@ -6,7 +6,7 @@ The parts handling the PMML stuff (aka the model, loading the model and predicti
 https://github.com/hkropp/jpmml-iris-example/blob/master/src/main/resources/sample/Iris.csv
 https://henning.kropponline.de/2015/09/06/jpmml-example-random-forest/
 
-# How to run
+# How to build and run locally
 1. Clone the project
 
 git clone https://github.com/spicoflorin/aws-sagemaker-example.git
@@ -29,5 +29,13 @@ docker  run -p 8080:8080 your-accountid.dkr.ecr.your-region.amazonaws.com/your-e
 
 curl -X POST http://localhost:8080/invocations -d '6.7,2.5,5.8,1.8,Iris-virginica' -H 'Content-Type: text/csv'
 
+# Push to ECR
+1. Login to ECR
+$(aws ecr get-login --region your-region --no-include-email)
 
+2. Create ECR repository "your-ecr-repository-name"
+aws ecr create-repository --repository-name "your-ecr-repository-name"
+
+3. Push local docker image to ECR
+docker push your-accountid.dkr.ecr.your-region.amazonaws.com/your-ecr-repository-name
 
